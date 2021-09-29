@@ -56,7 +56,7 @@ export interface ButtonAsAnchorProps extends Props, React.AnchorHTMLAttributes<H
 }
 
 export interface ButtonAsOtherProps extends Props, React.AnchorHTMLAttributes<HTMLAnchorElement> {
-  tag: string
+  tag: string | React.FunctionComponent<any> | React.ComponentClass<any>
 }
 
 export type ButtonProps = ButtonAsButtonProps | ButtonAsAnchorProps | ButtonAsOtherProps
