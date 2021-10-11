@@ -28,27 +28,27 @@ const Dropdown = React.forwardRef<HTMLDivElement, DropdownProps>(function Dropdo
   const baseStyle = dropdown.base
   const alignStyle = dropdown.align[align]
 
-  function handleEsc(e: KeyboardEvent) {
-    if (e.key === 'Esc' || e.key === 'Escape') {
-      onClose()
-    }
-  }
-
   const dropdownRef = useRef<HTMLUListElement>(null)
-  function handleClickOutside(e: MouseEvent) {
-    if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-      onClose()
-    }
-  }
 
   useEffect(() => {
+    function handleEsc(e: KeyboardEvent) {
+      if (e.key === 'Esc' || e.key === 'Escape') {
+        onClose()
+      }
+    }
+    function handleClickOutside(e: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        onClose()
+      }
+    }
+
     document.addEventListener('click', handleClickOutside, { capture: true })
     document.addEventListener('keydown', handleEsc, { capture: true })
     return () => {
       document.removeEventListener('click', handleClickOutside)
       document.removeEventListener('keydown', handleEsc)
     }
-  }, [isOpen])
+  }, [isOpen, onClose])
 
   const cls = classNames(baseStyle, alignStyle, className)
 
