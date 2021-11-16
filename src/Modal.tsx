@@ -33,9 +33,10 @@ const Modal = React.forwardRef<HTMLDivElement, ModalProps>(function Modal(props,
   }
 
   useEffect(() => {
-    document.addEventListener('keydown', handleEsc, { capture: true })
+    const options = { capture: true }
+    document.addEventListener('keydown', handleEsc, options)
     return () => {
-      document.removeEventListener('keydown', handleEsc)
+      document.removeEventListener('keydown', handleEsc, options)
     }
   })
 
