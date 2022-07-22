@@ -13,7 +13,7 @@ export interface Props {
   /**
    * Defines if the button is disabled
    */
-  disabled?: boolean
+  disabled?: boolean | undefined
   /**
    * The size of the button
    */
@@ -21,30 +21,32 @@ export interface Props {
   /**
    * Shows only one icon inside the button; defaults to left
    */
-  icon?: IconType
+  icon?: IconType | undefined
   /**
    * Shows an icon inside the button, left aligned
    */
-  iconLeft?: IconType
+  iconLeft?: IconType | undefined
   /**
    * Shows an icon inside the button, right aligned
    */
-  iconRight?: IconType
+  iconRight?: IconType | undefined
   /**
    * The style of the button
    */
-  layout?: 'outline' | 'link' | 'primary' | '__dropdownItem'
+  layout?: 'outline' | 'link' | 'primary' | '__dropdownItem' | undefined
   /**
    * Shows the button as a block (full width)
    */
   block?: boolean
 }
 
-export interface ButtonAsButtonProps extends Props, React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonAsButtonProps
+  extends Props,
+    Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'disabled'> {
   /**
    * The element that should be rendered as a button
    */
-  tag?: 'button'
+  tag?: 'button' | undefined
   /**
    * The native HTML button type
    */

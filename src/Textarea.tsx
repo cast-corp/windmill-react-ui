@@ -6,14 +6,15 @@ export interface TextareaProps extends React.ComponentPropsWithRef<'textarea'> {
   /**
    * Defines the color of the textarea
    */
-  valid?: boolean
+  valid?: boolean | undefined
 }
 
 const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(function Textarea(
   props,
   ref
 ) {
-  const { valid, disabled, className, children, ...other } = props
+  const { valid, className, children, ...other } = props
+  const { disabled } = other
 
   const {
     theme: { textarea },
@@ -47,7 +48,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(function T
   )
 
   return (
-    <textarea className={cls} ref={ref} disabled={disabled} {...other}>
+    <textarea className={cls} ref={ref} {...other}>
       {children}
     </textarea>
   )

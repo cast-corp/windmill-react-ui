@@ -3,11 +3,12 @@
  */
 import React, { useContext, useEffect, useRef } from 'react'
 import { CSSTransition as ReactCSSTransition } from 'react-transition-group'
+import type { CSSTransitionProps } from 'react-transition-group/CSSTransition'
 
 interface TransitionContext {
   parent: {
-    appear?: string
-    show?: boolean
+    appear?: string | undefined
+    show?: boolean | undefined
     isInitialRender?: boolean
   }
 }
@@ -24,15 +25,15 @@ function useIsInitialRender() {
 }
 
 interface TransitionProps {
-  children?: React.ReactNode
-  show?: boolean
-  enter?: string
-  enterFrom?: string
-  enterTo?: string
-  leave?: string
-  leaveFrom?: string
-  leaveTo?: string
-  appear?: string
+  children?: React.ReactNode | undefined
+  show?: boolean | undefined
+  enter?: string | undefined
+  enterFrom?: string | undefined
+  enterTo?: string | undefined
+  leave?: string | undefined
+  leaveFrom?: string | undefined
+  leaveTo?: string | undefined
+  appear?: string | undefined
 }
 
 const CSSTransition: React.FC<TransitionProps> = function CSSTransition({
@@ -61,35 +62,37 @@ const CSSTransition: React.FC<TransitionProps> = function CSSTransition({
     classes.length && node.classList.remove(...classes)
   }
 
+  const transitionProps: CSSTransitionProps = {
+    appear,
+    addEndListener: (node, done) => {
+      node.addEventListener('transitionend', done, false)
+    },
+    onEnter: (node) => {
+      addClasses(node, [...enterClasses, ...enterFromClasses])
+    },
+    onEntering: (node) => {
+      removeClasses(node, enterFromClasses)
+      addClasses(node, enterToClasses)
+    },
+    onEntered: (node) => {
+      removeClasses(node, [...enterToClasses, ...enterClasses])
+    },
+    onExit: (node) => {
+      addClasses(node, [...leaveClasses, ...leaveFromClasses])
+    },
+    onExiting: (node) => {
+      removeClasses(node, leaveFromClasses)
+      addClasses(node, leaveToClasses)
+    },
+    onExited: (node) => {
+      removeClasses(node, [...leaveToClasses, ...leaveClasses])
+    },
+  }
+  if (show !== undefined) {
+    transitionProps.in = show
+  }
   return (
-    <ReactCSSTransition
-      appear={appear}
-      unmountOnExit
-      in={show}
-      addEndListener={(node: HTMLElement, done) => {
-        node.addEventListener('transitionend', done, false)
-      }}
-      onEnter={(node: HTMLElement) => {
-        addClasses(node, [...enterClasses, ...enterFromClasses])
-      }}
-      onEntering={(node: HTMLElement) => {
-        removeClasses(node, enterFromClasses)
-        addClasses(node, enterToClasses)
-      }}
-      onEntered={(node: HTMLElement) => {
-        removeClasses(node, [...enterToClasses, ...enterClasses])
-      }}
-      onExit={(node: HTMLElement) => {
-        addClasses(node, [...leaveClasses, ...leaveFromClasses])
-      }}
-      onExiting={(node: HTMLElement) => {
-        removeClasses(node, leaveFromClasses)
-        addClasses(node, leaveToClasses)
-      }}
-      onExited={(node: HTMLElement) => {
-        removeClasses(node, [...leaveToClasses, ...leaveClasses])
-      }}
-    >
+    <ReactCSSTransition {...transitionProps} unmountOnExit>
       {children}
     </ReactCSSTransition>
   )

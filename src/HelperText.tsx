@@ -6,7 +6,7 @@ export interface HelperTextProps extends React.HTMLAttributes<HTMLSpanElement> {
   /**
    * Defines the color of the helper text (the same as with Input, Select, etc.)
    */
-  valid?: boolean
+  valid?: boolean | undefined
 }
 
 const HelperText = React.forwardRef<HTMLSpanElement, HelperTextProps>(function HelperText(

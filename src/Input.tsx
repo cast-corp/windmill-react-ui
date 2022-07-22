@@ -6,7 +6,7 @@ export interface InputProps extends React.ComponentPropsWithRef<'input'> {
   /**
    * Defines the color of the input
    */
-  valid?: boolean
+  valid?: boolean | undefined
   /**
    * Defines if the input is disabled
    */
@@ -18,7 +18,8 @@ export interface InputProps extends React.ComponentPropsWithRef<'input'> {
 }
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(function Input(props, ref) {
-  const { valid, disabled, className, type = 'text', ...other } = props
+  const { valid, className, type = 'text', ...other } = props
+  const { disabled } = other
 
   const {
     theme: { input },
@@ -64,7 +65,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(function Input(prop
     className
   )
 
-  return <input className={cls} type={type} ref={ref} disabled={disabled} {...other} />
+  return <input className={cls} type={type} ref={ref} {...other} />
 })
 
 export default Input

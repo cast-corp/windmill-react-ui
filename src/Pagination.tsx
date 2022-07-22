@@ -31,24 +31,14 @@ interface NavigationButtonProps extends ButtonAsButtonProps {
 }
 
 export const NavigationButton: React.FC<NavigationButtonProps> = function NavigationButton({
-  onClick,
-  disabled,
   directionIcon,
+  ...props
 }) {
   const ariaLabel = directionIcon === 'prev' ? 'Previous' : 'Next'
 
   const icon = directionIcon === 'prev' ? PrevIcon : NextIcon
 
-  return (
-    <Button
-      size="small"
-      layout="link"
-      icon={icon}
-      onClick={onClick}
-      disabled={disabled}
-      aria-label={ariaLabel}
-    />
-  )
+  return <Button {...props} size="small" layout="link" icon={icon} aria-label={ariaLabel} />
 }
 
 interface PageButtonProps extends ButtonAsButtonProps {
@@ -65,10 +55,10 @@ interface PageButtonProps extends ButtonAsButtonProps {
 export const PageButton: React.FC<PageButtonProps> = function PageButton({
   page,
   isActive,
-  onClick,
+  ...props
 }) {
   return (
-    <Button size="pagination" layout={isActive ? 'primary' : 'link'} onClick={onClick}>
+    <Button {...props} size="pagination" layout={isActive ? 'primary' : 'link'}>
       {page}
     </Button>
   )

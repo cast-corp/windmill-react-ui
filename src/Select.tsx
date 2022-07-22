@@ -6,11 +6,12 @@ export interface SelectProps extends React.ComponentPropsWithRef<'select'> {
   /**
    * Defines the color of the select
    */
-  valid?: boolean
+  valid?: boolean | undefined
 }
 
 const Select = React.forwardRef<HTMLSelectElement, SelectProps>(function Select(props, ref) {
-  const { valid, children, className, multiple, disabled, ...other } = props
+  const { valid, children, className, ...other } = props
+  const { disabled, multiple } = other
 
   const {
     theme: { select },
@@ -46,7 +47,7 @@ const Select = React.forwardRef<HTMLSelectElement, SelectProps>(function Select(
   )
 
   return (
-    <select className={cls} ref={ref} disabled={disabled} multiple={!!multiple} {...other}>
+    <select className={cls} ref={ref} {...other}>
       {children}
     </select>
   )
