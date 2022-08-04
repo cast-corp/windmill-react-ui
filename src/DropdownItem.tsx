@@ -3,8 +3,10 @@ import { ButtonProps } from './Button'
 import Button from './Button'
 import { ThemeContext } from './context/ThemeContext'
 
-type Ref = typeof Button
-const DropdownItem = React.forwardRef<Ref, ButtonProps>(function DropdownItem(props, ref) {
+const DropdownItem = React.forwardRef<HTMLButtonElement, ButtonProps>(function DropdownItem(
+  props,
+  ref
+) {
   // Note: className is passed to the inner Button
   const { children, ...other } = props
 
