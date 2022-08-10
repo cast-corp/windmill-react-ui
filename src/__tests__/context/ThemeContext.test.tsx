@@ -22,7 +22,7 @@ describe('ThemeProvider', () => {
 
   it('should execute the toggleMode method', () => {
     const toggleMode = jest.fn()
-    const theme = { test: 'test' }
+    const theme = { test: 'test' } as any
     const wrapper = mount(
       <ThemeContext.Provider value={{ toggleMode, theme }}>
         <TestButton />

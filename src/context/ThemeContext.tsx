@@ -2,7 +2,7 @@ import React from 'react'
 import defaultTheme from '../themes/default'
 
 interface ThemeContextInterface {
-  theme: any
+  theme: typeof defaultTheme
   mode?: Mode
   toggleMode?: any
 }

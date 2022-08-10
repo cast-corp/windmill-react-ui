@@ -189,6 +189,7 @@ export default {
       small: 'h-3 w-3',
       left: 'mr-2 -ml-1',
       right: 'ml-2 -mr-1',
+      pagination: 'h-5 w-5',
     },
     primary: {
       base: 'text-white bg-purple-600 border border-transparent',
