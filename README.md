@@ -1,5 +1,16 @@
 # Windmill React UI
 
+## cast-corp fork install info
+
+1. Follow [GitHub's NPM registry package install instructions](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#installing-a-package) **steps 1-3**
+   - Note that authentication is required even though the package is public.
+2. ```bash
+   npm install @windmill/react-ui@npm:@cast-corp/windmill-react-ui
+   ```
+   This will install the package as `@windmill/react-ui`, not `@cast-corp/windmill-react-ui`, [which is required for class purging to work correctly](https://github.com/cast-corp/windmill-react-ui/pull/2#issuecomment-1227334817).
+
+---
+
 The component library for fast and accessible development of gorgeous interfaces.
 
 <p>
