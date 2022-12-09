@@ -1,6 +1,6 @@
 import React, { SVGAttributes, useContext } from 'react'
 import classNames from 'classnames'
-import { ThemeContext } from './context/ThemeContext'
+import { WindmillContext } from './WindmillContext'
 
 enum AlertEnum {
   success,
@@ -97,7 +97,7 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(props,
   const { className, children, type = 'neutral', onClose, ...other } = props
   const {
     theme: { alert },
-  } = useContext(ThemeContext)
+  } = useContext(WindmillContext)
 
   const baseStyle = alert.base
   const withCloseStyle = alert.withClose

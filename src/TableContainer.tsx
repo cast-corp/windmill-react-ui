@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import classNames from 'classnames'
-import { ThemeContext } from './context/ThemeContext'
+import { WindmillContext } from './WindmillContext'
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {}
 
@@ -9,7 +9,7 @@ const TableContainer = React.forwardRef<HTMLDivElement, Props>(function TableCon
 
   const {
     theme: { tableContainer },
-  } = useContext(ThemeContext)
+  } = useContext(WindmillContext)
 
   const baseStyle = tableContainer.base
 

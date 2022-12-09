@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { ButtonProps } from './Button'
 import Button from './Button'
-import { ThemeContext } from './context/ThemeContext'
+import { WindmillContext } from './WindmillContext'
 
 const DropdownItem = React.forwardRef<HTMLButtonElement, ButtonProps>(function DropdownItem(
   props,
@@ -12,7 +12,7 @@ const DropdownItem = React.forwardRef<HTMLButtonElement, ButtonProps>(function D
 
   const {
     theme: { dropdownItem },
-  } = useContext(ThemeContext)
+  } = useContext(WindmillContext)
 
   const baseStyle = dropdownItem.base
 

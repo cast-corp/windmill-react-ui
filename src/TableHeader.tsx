@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import classNames from 'classnames'
-import { ThemeContext } from './context/ThemeContext'
+import { WindmillContext } from './WindmillContext'
 
 interface Props extends React.HTMLAttributes<HTMLTableSectionElement> {}
 
@@ -12,7 +12,7 @@ const TableHeader = React.forwardRef<HTMLTableSectionElement, Props>(function Ta
 
   const {
     theme: { tableHeader },
-  } = useContext(ThemeContext)
+  } = useContext(WindmillContext)
 
   const baseStyle = tableHeader.base
 

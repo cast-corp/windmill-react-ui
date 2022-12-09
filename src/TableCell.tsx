@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import classNames from 'classnames'
-import { ThemeContext } from './context/ThemeContext'
+import { WindmillContext } from './WindmillContext'
 
 interface Props extends React.TdHTMLAttributes<HTMLTableCellElement> {}
 
@@ -9,7 +9,7 @@ const TableCell = React.forwardRef<HTMLTableCellElement, Props>(function TableCe
 
   const {
     theme: { tableCell },
-  } = useContext(ThemeContext)
+  } = useContext(WindmillContext)
 
   const baseStyle = tableCell.base
 

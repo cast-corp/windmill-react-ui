@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import React, { ReactNode, useContext } from 'react'
-import { ThemeContext } from './context/ThemeContext'
+import { WindmillContext } from './WindmillContext'
 import warn from './utils/warning'
 
 type IconType =
@@ -83,7 +83,7 @@ const Button = React.forwardRef<Ref, ButtonProps>(function Button(props, ref) {
   } = props
   const {
     theme: { button },
-  } = useContext(ThemeContext)
+  } = useContext(WindmillContext)
 
   function hasIcon() {
     return !!icon || !!iconLeft || !!iconRight

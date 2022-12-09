@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import classNames from 'classnames'
-import { ThemeContext } from './context/ThemeContext'
+import { WindmillContext } from './WindmillContext'
 
 export interface InputProps extends React.ComponentPropsWithRef<'input'> {
   /**
@@ -23,7 +23,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(function Input(prop
 
   const {
     theme: { input },
-  } = useContext(ThemeContext)
+  } = useContext(WindmillContext)
 
   const baseStyle = input.base
   const activeStyle = input.active

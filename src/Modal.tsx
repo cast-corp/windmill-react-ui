@@ -4,7 +4,7 @@ import Backdrop from './Backdrop'
 import Transition from './Transition'
 import FocusLock from 'react-focus-lock'
 
-import { ThemeContext } from './context/ThemeContext'
+import { WindmillContext } from './WindmillContext'
 
 export interface ModalProps extends React.HTMLAttributes<HTMLDivElement> {
   /**
@@ -22,7 +22,7 @@ const Modal = React.forwardRef<HTMLDivElement, ModalProps>(function Modal(props,
 
   const {
     theme: { modal },
-  } = useContext(ThemeContext)
+  } = useContext(WindmillContext)
 
   const baseStyle = modal.base
 

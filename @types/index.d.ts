@@ -1,4 +1,4 @@
-// used in ThemeContext
+// used in WindmillContext
 type Mode = string | null
 
 declare module '*.svg' {

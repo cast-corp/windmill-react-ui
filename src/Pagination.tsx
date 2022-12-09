@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import Button, { ButtonAsButtonProps } from './Button'
-import { ThemeContext } from './context/ThemeContext'
+import { WindmillContext } from './WindmillContext'
 
 const PrevIcon: React.FC = function PrevIcon(props) {
   return (
@@ -149,7 +149,7 @@ const Pagination = React.forwardRef<Ref, PaginationProps>(function Pagination(pr
 
   const {
     theme: { pagination },
-  } = useContext(ThemeContext)
+  } = useContext(WindmillContext)
 
   const baseStyle = pagination.base
 

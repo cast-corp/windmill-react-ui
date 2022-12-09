@@ -1,6 +1,6 @@
 import React, { ImgHTMLAttributes, useContext } from 'react'
 import classNames from 'classnames'
-import { ThemeContext } from './context/ThemeContext'
+import { WindmillContext } from './WindmillContext'
 
 export interface AvatarProps extends React.HTMLAttributes<HTMLDivElement> {
   /**
@@ -21,7 +21,7 @@ const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(function Avatar(pro
   const { size = 'regular', src, alt, className, ...other } = props
   const {
     theme: { avatar },
-  } = useContext(ThemeContext)
+  } = useContext(WindmillContext)
 
   const baseStyle = avatar.base
   const sizeStyles = {

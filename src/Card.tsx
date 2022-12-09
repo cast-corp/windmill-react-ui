@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import classNames from 'classnames'
-import { ThemeContext } from './context/ThemeContext'
+import { WindmillContext } from './WindmillContext'
 
 export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   /**
@@ -13,7 +13,7 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(function Card(props, re
   const { className, children, colored = false, ...other } = props
   const {
     theme: { card },
-  } = useContext(ThemeContext)
+  } = useContext(WindmillContext)
 
   const baseStyle = card.base
   const uncoloredStyle = card.default

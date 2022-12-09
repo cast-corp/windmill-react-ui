@@ -1,6 +1,6 @@
 import React, { useEffect, useContext, useRef } from 'react'
 import classNames from 'classnames'
-import { ThemeContext } from './context/ThemeContext'
+import { WindmillContext } from './WindmillContext'
 import Transition from './Transition'
 import FocusLock from 'react-focus-lock'
 
@@ -23,7 +23,7 @@ const Dropdown = React.forwardRef<HTMLDivElement, DropdownProps>(function Dropdo
   const { children, onClose, isOpen, className, align = 'left', ...other } = props
   const {
     theme: { dropdown },
-  } = useContext(ThemeContext)
+  } = useContext(WindmillContext)
 
   const baseStyle = dropdown.base
   const alignStyle = dropdown.align[align]

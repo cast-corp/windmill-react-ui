@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import classNames from 'classnames'
-import { ThemeContext } from './context/ThemeContext'
+import { WindmillContext } from './WindmillContext'
 
 export interface LabelProps extends React.HTMLAttributes<HTMLLabelElement> {
   /**
@@ -21,7 +21,7 @@ const Label = React.forwardRef<HTMLLabelElement, LabelProps>(function Label(prop
   const { children, check, radio, disabled, className, ...other } = props
   const {
     theme: { label },
-  } = useContext(ThemeContext)
+  } = useContext(WindmillContext)
 
   const baseStyle = label.base
   const checkStyle = label.check

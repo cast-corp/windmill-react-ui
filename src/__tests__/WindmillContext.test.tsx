@@ -1,20 +1,20 @@
 import React, { useContext } from 'react'
 import { mount } from 'enzyme'
-import { ThemeProvider, ThemeContext } from '../../context/ThemeContext'
+import { WindmillProvider, WindmillContext } from '../WindmillContext'
 
 function TestButton() {
-  const { toggleMode } = useContext(ThemeContext)
+  const { toggleMode } = useContext(WindmillContext)
 
   return <button onClick={() => toggleMode()}>Click</button>
 }
 
-describe('ThemeProvider', () => {
+describe('WindmillProvider', () => {
   it('should show value from provider', () => {
     const expected = 'Lorem'
     const wrapper = mount(
-      <ThemeProvider value={{ theme: 'Lorem' }}>
-        <ThemeContext.Consumer>{(value) => <span>{value.theme}</span>}</ThemeContext.Consumer>
-      </ThemeProvider>
+      <WindmillProvider value={{ theme: 'Lorem' }}>
+        <WindmillContext.Consumer>{(value) => <span>{value.theme}</span>}</WindmillContext.Consumer>
+      </WindmillProvider>
     )
 
     expect(wrapper.find('span').text()).toContain(expected)
@@ -24,9 +24,9 @@ describe('ThemeProvider', () => {
     const toggleMode = jest.fn()
     const theme = { test: 'test' } as any
     const wrapper = mount(
-      <ThemeContext.Provider value={{ toggleMode, theme }}>
+      <WindmillContext.Provider value={{ toggleMode, theme }}>
         <TestButton />
-      </ThemeContext.Provider>
+      </WindmillContext.Provider>
     )
 
     const button = wrapper.find('button')

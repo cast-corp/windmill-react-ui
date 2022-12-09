@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import classNames from 'classnames'
-import { ThemeContext } from './context/ThemeContext'
+import { WindmillContext } from './WindmillContext'
 
 export interface BackdropProps extends React.HTMLAttributes<HTMLDivElement> {}
 
@@ -8,7 +8,7 @@ const Backdrop = React.forwardRef<HTMLDivElement, BackdropProps>(function Backdr
   const { className, ...other } = props
   const {
     theme: { backdrop },
-  } = useContext(ThemeContext)
+  } = useContext(WindmillContext)
 
   const baseStyle = backdrop.base
 

@@ -1,4 +1,4 @@
-export { ThemeContext as WindmillContext } from './context/ThemeContext'
+export { WindmillContext as WindmillContext } from './WindmillContext'
 
 export { default as Alert } from './Alert'
 export { default as Avatar } from './Avatar'

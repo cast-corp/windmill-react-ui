@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import classNames from 'classnames'
-import { ThemeContext } from './context/ThemeContext'
+import { WindmillContext } from './WindmillContext'
 
 export interface SelectProps extends React.ComponentPropsWithRef<'select'> {
   /**
@@ -15,7 +15,7 @@ const Select = React.forwardRef<HTMLSelectElement, SelectProps>(function Select(
 
   const {
     theme: { select },
-  } = useContext(ThemeContext)
+  } = useContext(WindmillContext)
 
   const baseStyle = select.base
   const activeStyle = select.active

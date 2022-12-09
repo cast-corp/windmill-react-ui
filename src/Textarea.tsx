@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import classNames from 'classnames'
-import { ThemeContext } from './context/ThemeContext'
+import { WindmillContext } from './WindmillContext'
 
 export interface TextareaProps extends React.ComponentPropsWithRef<'textarea'> {
   /**
@@ -18,7 +18,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(function T
 
   const {
     theme: { textarea },
-  } = useContext(ThemeContext)
+  } = useContext(WindmillContext)
 
   const baseStyle = textarea.base
   const activeStyle = textarea.active

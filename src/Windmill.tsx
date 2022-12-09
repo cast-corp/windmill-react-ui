@@ -1,5 +1,5 @@
 import React, { useLayoutEffect, useMemo } from 'react'
-import { ThemeContext } from './context/ThemeContext'
+import { WindmillContext } from './WindmillContext'
 import defaultTheme from './themes/default'
 import { mergeDeep } from './utils/mergeDeep'
 import useDarkMode from './utils/useDarkMode'
@@ -47,7 +47,7 @@ const Windmill: React.FC<Props> = ({
     [mode]
   )
 
-  return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
+  return <WindmillContext.Provider value={value}>{children}</WindmillContext.Provider>
 }
 
 export default Windmill

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import classNames from 'classnames'
-import { ThemeContext } from './context/ThemeContext'
+import { WindmillContext } from './WindmillContext'
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {}
 
@@ -8,7 +8,7 @@ const ModalFooter = React.forwardRef<HTMLElement, Props>(function ModalFooter(pr
   const { children, className, ...other } = props
   const {
     theme: { modalFooter },
-  } = useContext(ThemeContext)
+  } = useContext(WindmillContext)
 
   const baseStyle = modalFooter.base
 

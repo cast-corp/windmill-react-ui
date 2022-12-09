@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import classNames from 'classnames'
-import { ThemeContext } from './context/ThemeContext'
+import { WindmillContext } from './WindmillContext'
 
 export interface HelperTextProps extends React.HTMLAttributes<HTMLSpanElement> {
   /**
@@ -16,7 +16,7 @@ const HelperText = React.forwardRef<HTMLSpanElement, HelperTextProps>(function H
   const { children, valid, className, ...other } = props
   const {
     theme: { helperText },
-  } = useContext(ThemeContext)
+  } = useContext(WindmillContext)
 
   const baseStyle = helperText.base
   const validStyle = helperText.valid
