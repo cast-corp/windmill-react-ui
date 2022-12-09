@@ -19,3 +19,5 @@ interface WindmillProviderProps {
 export const WindmillProvider: React.FC<WindmillProviderProps> = ({ children, value }) => {
   return <WindmillContext.Provider value={value}>{children}</WindmillContext.Provider>
 }
+
+export default WindmillContext

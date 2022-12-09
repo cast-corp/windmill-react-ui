@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import React, { ReactNode, useContext } from 'react'
 import { WindmillContext } from './WindmillContext'
-import warn from './utils/warning'
+// import warn from './utils/warning'
 
 type IconType =
   | string
@@ -89,11 +89,11 @@ const Button = React.forwardRef<Ref, ButtonProps>(function Button(props, ref) {
     return !!icon || !!iconLeft || !!iconRight
   }
 
-  warn(
-    hasIcon() && !other['aria-label'] && !children,
-    'Button',
-    'You are using an icon button, but no "aria-label" attribute was found. Add an "aria-label" attribute to work as a label for screen readers.'
-  )
+  // warn(
+  //   hasIcon() && !other['aria-label'] && !children,
+  //   'Button',
+  //   'You are using an icon button, but no "aria-label" attribute was found. Add an "aria-label" attribute to work as a label for screen readers.'
+  // )
 
   const IconLeft = iconLeft || icon
   const IconRight = iconRight

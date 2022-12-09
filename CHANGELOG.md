@@ -1,3 +1,22 @@
+# 0.8.0
+
+Tree-shaking support with `babel-plugin-import`:
+
+```json
+[
+  "import",
+  {
+    "libraryName": "@windmill/react-ui",
+    "libraryDirectory": "dist",
+    "camel2DashComponentName": false
+  }
+]
+```
+
+# 0.7.0
+
+Tailwind v3 support
+
 # [0.6.0](https://github.com/estevanmaito/windmill-react-ui/compare/0.6.0-beta.0...0.6.0) (2021-05-17)
 
 This is the last version before 1.0. It already introduces some breaking changes from 0.5.x, but if you just want some base components on top of Tailwind 2.0, this is what you're looking for.
@@ -309,3 +328,7 @@ If you need pre Tailwind v2 support, go for 0.5.1.
 - **themes:** add dark mode and toggle ([371578e](https://github.com/estevanmaito/windmill-react-ui/commit/371578ee1109a8ca78c0fac6c4b8a509f5abdd2c))
 - **themes:** expose themes configs ([f388a54](https://github.com/estevanmaito/windmill-react-ui/commit/f388a542ed2645b5edf8613283ab229d287c7ae3))
 - **transition:** add transition ([46a7d6b](https://github.com/estevanmaito/windmill-react-ui/commit/46a7d6bee3a26cfe04dc68f51253f429465eb1f1))
+
+```
+
+```
