@@ -3,7 +3,7 @@ const deepMerge = require('deepmerge')
 const windmillConfig = {
   darkMode: 'class',
   content: [
-    'node_modules/@windmill/react-ui/lib/defaultTheme.js',
+    'node_modules/@windmill/react-ui/dist/themes/default.js',
     'node_modules/@windmill/react-ui/dist/index.js',
   ],
   plugins: [require('@tailwindcss/forms')],
